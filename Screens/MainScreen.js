@@ -60,7 +60,7 @@ export default class Main extends Component {
   render() {
     return (
       <View  style={styles.container}>
-      <ApplicationTintuc screenProps={{conten:({item})=>this.props.navigation.navigate('Details',{item:item})}}  />
+      <ApplicationTintuc screenProps={{conten:(item)=>this.props.navigation.navigate('Details',{itemInfo:item})}}  />
       
       </View>
     )

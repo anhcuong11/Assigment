@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Text, View,FlatList,Image,TouchableOpacity,Alert} from 'react-native'
 import { withNavigation } from 'react-navigation';
 import firebaseConf from '../lib/firebaseConfig';
-
+import Detail from '../Screens/Detail'
 
 
 export default class Tintuc1 extends Component {
@@ -62,7 +62,7 @@ export default class Tintuc1 extends Component {
                   <View style={{flexDirection:'column',marginLeft:10,marginRight:10,borderBottomWidth: 1,
                   borderBottomColor: '#DDDDDD',}}>  
                    <TouchableOpacity 
-                      onPress={() => { this.props.screenProps.conten()}}>
+                      onPress={() => { this.props.screenProps.conten(item)}}>
                   <Text style={{fontSize:18,fontWeight:"bold"}}  >{item.Title}</Text>
                </TouchableOpacity>
                  <Text style={{fontSize:14}}> {item.content} </Text>
@@ -72,7 +72,7 @@ export default class Tintuc1 extends Component {
                 <Image style={{width:80,height:80,flex:1,marginRight:5}} source={{uri:item.image}}/>
                   <View style={{flexDirection:'column',flex:3}}>  
                     <TouchableOpacity
-                      onPress={() => { this.props.screenProps.conten(item.key) }}>
+                      onPress={() => { this.props.screenProps.conten(item) }}>
                       <Text style={{ fontSize: 14, fontWeight: "bold" }}  >{item.Title}</Text>
                     </TouchableOpacity>
                  <Text style={{fontSize:10}}> {item.content} </Text>
